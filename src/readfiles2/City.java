@@ -1,37 +1,21 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package readfiles2;
-
-import java.math.BigDecimal;
-//import org.apache.commons.lang.builder.EqualsBuilder;
-//import org.apache.commons.lang.builder.HashCodeBuilder;
 
 /**
  *
- * @author yoyo
+ * @author yoyo && thatOneDroid
  */
-public class City 
-{
+
+public class City {
+
     private Double lat;
     private Double longt;
     private String name;
-
-//    public City(String name,double lat, double longt) {
-//        this.lat = lat;
-//        this.longt = longt;
-//        this.name = name;
-//    }
 
     @Override
     public String toString() {
         return "City{" + "lat=" + lat + ", longt=" + longt + ", name=" + name + '}';
     }
 
-    
-    
     public Double getLat() {
         return lat;
     }
@@ -55,41 +39,33 @@ public class City
     public void setName(String name) {
         this.name = name;
     }
-    
+
     @Override
-    public int hashCode()
-    {
-         int result=17;
-            result=31*result;
-            result=31*result+(name!=null ? name.hashCode():0);
-            return result;
-       // return new HashCodeBuilder().append(name).append(lat).append(longt).toHashCode();
+    public int hashCode() {
+        int result = 17;
+        result = 31 * result;
+        result = 31 * result + (name != null ? name.hashCode() : 0);
+        return result;
     }
-    
+
     @Override
-    public boolean equals(Object obj)
-    {
-        //return false;
-        if(obj == null)
-        {
+    public boolean equals(Object obj) {
+
+        if (obj == null) {
             return false;
         }
-        
-        if(obj == this)
-        {
+
+        if (obj == this) {
             return true;
         }
-        
-        if(obj.getClass() != this.getClass())
-        {
+
+        if (obj.getClass() != this.getClass()) {
             return false;
         }
-        
-        City rhs = (City)obj;
-        return this.getName() == rhs.getName() && this.getLat()==rhs.getLat();
-      //  System.out.println(new EqualsBuilder().append(name, rhs.getName()).append(lat,rhs.getLat()).append(longt,rhs.getLongt()).isEquals());
-       // return new EqualsBuilder().append(name, rhs.getName()).append(lat,rhs.getLat()).append(longt,rhs.getLongt()).isEquals();
-        
+
+        City rhs = (City) obj;
+        return this.getName() == rhs.getName() && this.getLat() == rhs.getLat();
+
     }
-    
+
 }
